@@ -11,14 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
-
-//Dashboard Controller
-Route::get('', 'DashboardController@index');
-Route::get('dashboard', 'DashboardController@index'); //just in case
-Route::get('regions', 'DashboardController@index'); //just in case
-Route::resource('users', 'UsersController'); //List of users
-=======
 function getImageContentType($file){
     $mime = exif_imagetype($file);
     
@@ -177,13 +169,10 @@ Route::group(['prefix' => 'adminnotifications'], function () {
 
 Route::resource('monades', 'MonadesController');
 
->>>>>>> newGorilla
 Route::get('ajax/periferies', 'AjaxController@getPeriferiesTab');
 Route::get('ajax/periferiakes-enotites', 'AjaxController@getPeriferiakesEnotTab');
 Route::get('ajax/dimoi', 'AjaxController@getDimoi');
 Route::get('ajax/drastiriotites', 'AjaxController@getDrastiriotites');
-<<<<<<< HEAD
-=======
 Route::get('ajax/customers','AjaxController@getClientsList');
 
 //mine ====================
@@ -201,7 +190,6 @@ Route::get('ajax/allmunicipalities/{id}','AjaxController@getAllMunicipalities');
 
 
 
->>>>>>> newGorilla
 
 
 //Route::get('users/{id}/roles', 'UsersController@userRole'); //Edit user role
@@ -217,8 +205,6 @@ Route::get('getdata/mainChart/{year}/{category}/{xAxis?}', 'GetdataController@ma
 Route::get('getdata/mainChartData/{year}/{perifereia?}', 'GetdataController@mainChartData');
 Route::get('getdata/categoriesSum/{year}','GetdataController@categoriesSum');
 
-<<<<<<< HEAD
-=======
 Route::get('getdataNew/','GetdataController@getDataNew');
 
 
@@ -230,20 +216,14 @@ Route::get('/apointment', 'ContentController@apointment');
 
 Route::get('/faq', 'ContentController@faq');
 
->>>>>>> newGorilla
 
 // Authentication Routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
-<<<<<<< HEAD
-//
-//// Password Reset Routes...
-=======
 
 
 // Password Reset Routes...
->>>>>>> newGorilla
 //Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
 //Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
 //Route::post('password/reset', 'Auth\PasswordController@reset');

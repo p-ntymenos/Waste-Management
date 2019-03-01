@@ -5,10 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 USE App\Mitrwo;
-<<<<<<< HEAD
-=======
 USE App\Fortio;
->>>>>>> newGorilla
 
 class GetdataController extends Controller {
 
@@ -18,29 +15,18 @@ class GetdataController extends Controller {
      * @return Response
      */
 
-<<<<<<< HEAD
-    public $_mitrwo;
-=======
     public $_mitrwo,$_fortio;
->>>>>>> newGorilla
 
     /**
  * Create a new controller instance.
  *
  * @return void
  */
-<<<<<<< HEAD
-    public function __construct(Mitrwo $mitrwo)
-    {
-        parent::__construct();
-        $this->_mitrwo = $mitrwo;
-=======
     public function __construct(Mitrwo $mitrwo,Fortio $fortio)
     {
         parent::__construct();
         $this->_mitrwo = $mitrwo;
         $this->_fortio = $fortio;
->>>>>>> newGorilla
     }
 
     public function index()
@@ -50,8 +36,6 @@ class GetdataController extends Controller {
         return \Response::json($this->_mitrwo->getMainChart(0,'2015',0));
 
     }
-<<<<<<< HEAD
-=======
     
     public function getDataNew(){
         
@@ -59,7 +43,6 @@ class GetdataController extends Controller {
         return \Response::json($this->_fortio->getFortia());
         
     }
->>>>>>> newGorilla
 
     public function queries($category = 0,$year = null,$xAxis = 0)
     {

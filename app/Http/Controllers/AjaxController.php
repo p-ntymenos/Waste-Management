@@ -19,27 +19,18 @@ class AjaxController extends Controller
         $this->mitrwo = $mitrwo;
     }
 
-<<<<<<< HEAD
-=======
     public function getClientsList(){
 
 
         return $this->mitrwo->getAllClients();
     }
 
->>>>>>> newGorilla
     /**
      * Display a listing of periferies
      * .
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function getPeriferiesTab()
-    {
-
-        $perifereies = $this->mitrwo->getPeriferies();
-=======
 
     public function getRegions($year = 2014){
         $res = $this->mitrwo->getRegions($year,0);
@@ -102,7 +93,6 @@ class AjaxController extends Controller
 
         $perifereies = $this->mitrwo->getPeriferies();
 
->>>>>>> newGorilla
         $posotites = [];
         $total = [];
         foreach($perifereies as $perifereia) {
@@ -118,18 +108,10 @@ class AjaxController extends Controller
         }
 
         $categories = $this->mitrwo->getCategories();
-<<<<<<< HEAD
-
-        return view('tabs.periferies')->with('perifereies',$perifereies)
-                                      ->with('posotites',$posotites)
-                                      ->with('total',$total)
-                                      ->with('categories',$categories);
-=======
         return view('tabs.periferies')->with('perifereies',$perifereies)
             ->with('posotites',$posotites)
             ->with('total',$total)
             ->with('categories',$categories);
->>>>>>> newGorilla
     }
 
     /**
@@ -139,15 +121,11 @@ class AjaxController extends Controller
      */
     public function getPeriferiakesEnotTab()
     {
-<<<<<<< HEAD
-        $perifEnotites = $this->mitrwo->getPeriferiakesEnotites('Θεσσαλίας');
-=======
         $periferia = Input::get('district','');
 
 
 
         $perifEnotites = $this->mitrwo->getPeriferiakesEnotites($periferia);
->>>>>>> newGorilla
 
         return view('tabs.perifEnotites')->with('perifEnotites',$perifEnotites);
     }

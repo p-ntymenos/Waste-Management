@@ -1,23 +1,8 @@
-<<<<<<< HEAD
 <?php namespace App\Http\Controllers;
-=======
-<?php 
-
-namespace App\Http\Controllers;
->>>>>>> newGorilla
 
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-<<<<<<< HEAD
-
-abstract class Controller extends BaseController {
-
-	use DispatchesCommands, ValidatesRequests;
-	public function __construct(){
-        $this->middleware('auth');
-	}
-=======
 use Illuminate\Routing\Route;
 use View;
 
@@ -66,5 +51,4 @@ abstract class Controller extends BaseController {
         }
 
     }
->>>>>>> newGorilla
 }

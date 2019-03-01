@@ -5,23 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder {
 
-<<<<<<< HEAD
-	/**
-=======
     /**
->>>>>>> newGorilla
 	 * Run the database seeds.
 	 *
 	 * @return void
 	 */
-<<<<<<< HEAD
-	public function run()
-	{
-		Model::unguard();
-
-		// $this->call('UserTableSeeder');
-	}
-=======
     public function run()
     {
         Model::unguard();
@@ -64,6 +52,5 @@ class DatabaseSeeder extends Seeder {
         DB::table('role_user')->insert(['user_id' => 5,'role_id' => 4]);
 
     }
->>>>>>> newGorilla
 
 }

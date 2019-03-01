@@ -16,12 +16,8 @@ class UserEditHimselfMiddleware
      */
     public function handle($request, Closure $next)
     {
-<<<<<<< HEAD
-        if ( !Auth::guest() && !Auth::user()->hasRole('admin') && Auth::user()->id != (int)$request->users) {
-=======
         
         if ( !Auth::guest() && /*!Auth::user()->hasRole('admin') &&*/ Auth::user()->id != (int)$request->id) {
->>>>>>> newGorilla
             return redirect('/dashboard');
         }
 

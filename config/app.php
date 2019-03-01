@@ -146,11 +146,8 @@ return [
 		App\Providers\UserBaseNavServiceProvider::class,
 		Zizaco\Entrust\EntrustServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
-<<<<<<< HEAD
-=======
         Cmgmyr\Messenger\MessengerServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
->>>>>>> newGorilla
 	],
 	/*
     |--------------------------------------------------------------------------
@@ -198,10 +195,7 @@ return [
 		'Entrust'	=> Zizaco\Entrust\EntrustServiceProvider::class,
 		'Form' 		=> Collective\Html\FormFacade::class,
 		'Html' 		=> Collective\Html\HtmlFacade::class,
-<<<<<<< HEAD
-=======
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
->>>>>>> newGorilla
 	],
 
 ];

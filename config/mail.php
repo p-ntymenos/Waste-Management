@@ -15,11 +15,7 @@ return [
 	|
 	*/
 
-<<<<<<< HEAD
 	'driver' => env('MAIL_DRIVER', 'smtp'),
-=======
-	'driver' => env('MAIL_DRIVER', 'log'),
->>>>>>> newGorilla
 
 	/*
 	|--------------------------------------------------------------------------
@@ -71,11 +67,7 @@ return [
 	|
 	*/
 
-<<<<<<< HEAD
 	'encryption' => 'tls',
-=======
-	'encryption' => 'ssl',
->>>>>>> newGorilla
 
 	/*
 	|--------------------------------------------------------------------------
@@ -114,11 +106,7 @@ return [
 	|
 	*/
 
-<<<<<<< HEAD
-	'sendmail' => '/usr/sbin/sendmail -bs',
-=======
 	'sendmail' => '',//H:\wamp2.5\bin\sendmail\sendmail.exe -t
->>>>>>> newGorilla
 
 	/*
 	|--------------------------------------------------------------------------

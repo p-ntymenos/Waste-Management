@@ -5,33 +5,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration {
 
-<<<<<<< HEAD
-	/**
-=======
     /**
->>>>>>> newGorilla
 	 * Run the migrations.
 	 *
 	 * @return void
 	 */
-<<<<<<< HEAD
-	public function up()
-	{
-		Schema::create('users', function(Blueprint $table)
-		{
-            
-			$table->increments('id');
-			$table->string('name');
-			$table->string('username')->unique();
-            $table->string('email')->unique();
-			$table->string('password', 60);
-			$table->rememberToken();
-			$table->timestamps();
-		});
-	}
-
-	/**
-=======
     public function up()
     {
         Schema::create('users', function(Blueprint $table)
@@ -59,21 +37,13 @@ class CreateUsersTable extends Migration {
     }
 
     /**
->>>>>>> newGorilla
 	 * Reverse the migrations.
 	 *
 	 * @return void
 	 */
-<<<<<<< HEAD
-	public function down()
-	{
-		Schema::drop('users');
-	}
-=======
     public function down()
     {
         Schema::drop('users');
     }
->>>>>>> newGorilla
 
 }

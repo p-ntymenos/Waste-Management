@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequestForm;
 use App\Role;
 use App\User;
-<<<<<<< HEAD
-=======
 use App\AjaxMitrwo;
->>>>>>> newGorilla
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,16 +14,6 @@ use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Password;
-<<<<<<< HEAD
-
-class UsersController extends Controller
-{
-    public function __construct()
-    {
-        parent::__construct();
-        $this->middleware('admin', ['except' => ['edit', 'update']]);
-        $this->middleware('editable', ['only' => ['edit', 'update']]);
-=======
 use Illuminate\Routing\UrlGenerator;
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManager;
@@ -48,7 +35,6 @@ class UsersController extends Controller
         $this->mitrwo = $mitrwo;
 
 
->>>>>>> newGorilla
     }
 
     /**
@@ -56,24 +42,6 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function index()
-    {
-//        $admin = new Role();
-//        $admin->name         = 'duktio';
-//        $admin->display_name = 'Dyktio'; // optional
-//        $admin->description  = 'User is allowed to manage and edit other users'; // optional
-//        $admin->save();
-//
-//        $user = User::find(5);
-//
-//        // role attach alias
-//        $user->attachRole($admin); // parameter can be an Role object, array, or id
-
-
-        $users = User::with('roles')->get();
-        return view('users.list')->with('users',$users);
-=======
     public function index($year = 2014,$limit = 5)
     {
 
@@ -118,7 +86,6 @@ class UsersController extends Controller
         $user = User::find($user_id);
         User::find($user_id)->delete();
         return redirect('/users');
->>>>>>> newGorilla
     }
 
     /**
@@ -128,14 +95,6 @@ class UsersController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
-        $roles = Role::all();
-
-        return view('users.new')->with('roles',$roles);
-
-    }
-
-=======
         
         //$user = User::with('roles')->find();
         //return $user;
@@ -191,7 +150,6 @@ class UsersController extends Controller
 
 
     
->>>>>>> newGorilla
     /**
      * Save user
      *
@@ -200,9 +158,6 @@ class UsersController extends Controller
      */
     public function store(UserRequestForm $requestForm)
     {
-<<<<<<< HEAD
-        //dd(Input::get('status'));
-=======
 
         //dd(Input::get('status'));
         
@@ -213,34 +168,23 @@ class UsersController extends Controller
         }
         
         
->>>>>>> newGorilla
         $user = new User();
         $user->name = Input::get('name');
         $user->email = Input::get('email');
         $user->status = (bool)Input::get('status');
         $user->username = Input::get('username');
-<<<<<<< HEAD
-        $user->password = bcrypt('test');
-=======
         $user->password = bcrypt(Input::get('password'));
         $user->userphoto = 'no-image.gif';
         
->>>>>>> newGorilla
         $user->save();
 
         if (Auth::user()->hasRole('admin') && !empty(Input::get('roles',[])) ) {
             $user->roles()->sync(Input::get('roles'));
         }
 
-<<<<<<< HEAD
-        $response = Password::sendResetLink(['email'=>$user->email], function (Message $message) {
-            $message->subject('Reset password');
-        });
-=======
 //        $response = Password::sendResetLink(['email'=>$user->email], function (Message $message) {
 //            $message->subject('Reset password');
 //        });
->>>>>>> newGorilla
 
         return redirect('/users');
 
@@ -254,15 +198,6 @@ class UsersController extends Controller
     public function edit($user_id)
     {
         $user = User::with('roles')->find($user_id);
-<<<<<<< HEAD
-        $roles = Role::all();
-
-        return view('users.edit')->with('user',$user)
-                                  ->with('roles',$roles);
-
-    }
-
-=======
         //return $user;
         $roles = Role::all();
         $clientsList = $this->mitrwo->getAllClients();
@@ -309,7 +244,6 @@ class UsersController extends Controller
     }
 
 
->>>>>>> newGorilla
     /**
      * Update a user
      *
@@ -319,11 +253,6 @@ class UsersController extends Controller
      */
     public function update($user_id, UserRequestForm $requestForm)
     {
-<<<<<<< HEAD
-        $user = User::find($user_id);
-
-        User::find($user_id)->update(Input::all());
-=======
 
         $user = User::find($user_id);
         
@@ -338,17 +267,11 @@ class UsersController extends Controller
             User::find($user_id)->update(array('password' => bcrypt(Input::get('password'))));
         }
 
->>>>>>> newGorilla
 
         if (Auth::user()->hasRole('admin') && !empty(Input::get('roles',[])) ){
             $user->roles()->sync(Input::get('roles'));
         }
 
-<<<<<<< HEAD
-        return redirect('/users');
-    }
-
-=======
         /*$response = Password::sendResetLink(['email'=>$user->email], function (Message $message) {
             $message->subject('Reset password');
         });*/
@@ -418,5 +341,4 @@ class UsersController extends Controller
         return redirect('/');
     }
 
->>>>>>> newGorilla
 }

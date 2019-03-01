@@ -1,33 +1,12 @@
 <?php
-<<<<<<< HEAD
-
-namespace App;
-
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
-
-=======
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Auth;
->>>>>>> newGorilla
 class AjaxMitrwo extends Model
 {
     protected $table = 'zcl_mhtrooneww';
 
-<<<<<<< HEAD
-    public function getPeriferies()
-    {
-        return $this->where('Kpefdescr','!=','')->groupBy('Kpefdescr')->orderBy('Kpefdescr','ASC')->paginate(20,['Kpefdescr']);
-    }
-
-    public function getPeriferiakesEnotites($periferia = null)
-    {
-        $query = $this->select(DB::raw('Ygeodescr, sum(qty) as qty'))
-                    ->where('Kpefdescr','!=','')
-                    ->where('Ygeodescr','!=','');
-=======
     protected $customerId ;
 
     public function __construct(){
@@ -241,33 +220,21 @@ class AjaxMitrwo extends Model
             ->where('Ygeodescr','!=','');
 
 
->>>>>>> newGorilla
 
         if ($periferia != null) {
             $query = $query->where('Kpefdescr','=',$periferia);
         }
 
-<<<<<<< HEAD
-        $query = $query->orderBy('Ygeodescr','ASC')
-                    ->groupBy('Ygeodescr')
-                    ->paginate(20);
-=======
 
 
         $query = $query->orderBy('Ygeodescr','ASC')
             ->groupBy('Ygeodescr')
             ->paginate(20);
->>>>>>> newGorilla
 
         return $query;
     }
 
-<<<<<<< HEAD
-    public function getDimoi($periferia = null)
-    {
-=======
     public function getDimoi($periferia = null){
->>>>>>> newGorilla
         $query = $this->select(DB::raw('Kgeodescr, sum(qty) as qty'))
             ->where('Kpefdescr','!=','')
             ->where('Kgeodescr','!=','');
@@ -283,12 +250,7 @@ class AjaxMitrwo extends Model
         return $query;
     }
 
-<<<<<<< HEAD
-    public function getDrastiriotites($paragwgos = null)
-    {
-=======
     public function getDrastiriotites($paragwgos = null){
->>>>>>> newGorilla
         $query = $this->select(DB::raw('occupation, sum(qty) as qty'))
             ->where('Kpefdescr','!=','')
             ->where('Kgeodescr','!=','');
@@ -304,21 +266,11 @@ class AjaxMitrwo extends Model
         return $query;
     }
 
-<<<<<<< HEAD
-    public function getWeightByPeriferia($periferia)
-    {
-        return $this->select(DB::raw('sum(qty) as qty,descr'))->where('Kpefdescr','=',$periferia)->groupBy('descr')->orderBy('descr','ASC')->get();
-    }
-
-    public function getCategories()
-    {
-=======
     public function getWeightByPeriferia($periferia){
         return $this->select(DB::raw('sum(qty) as qty,descr'))->where('Kpefdescr','=',$periferia)->groupBy('descr')->orderBy('descr','ASC')->get();
     }
 
     public function getCategories(){
->>>>>>> newGorilla
         return $this->select(DB::raw('distinct(descr)'))->orderBy('descr','ASC')->get('descr');
     }
 

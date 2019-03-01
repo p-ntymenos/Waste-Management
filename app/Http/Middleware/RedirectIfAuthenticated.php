@@ -35,11 +35,7 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
-<<<<<<< HEAD
-			return new RedirectResponse(url('/'));
-=======
             return new RedirectResponse(url('/'));
->>>>>>> newGorilla
 		}
 
 		return $next($request);

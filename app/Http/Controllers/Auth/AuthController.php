@@ -5,11 +5,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-<<<<<<< HEAD
-=======
 use \Illuminate\Http\Request;
 use Auth;
->>>>>>> newGorilla
 class AuthController extends Controller
 {
 	/*
@@ -24,12 +21,8 @@ class AuthController extends Controller
     */
 	protected $redirectPath = '/dashboard';
 	protected $redirectTo = '/dashboard';
-<<<<<<< HEAD
-
-=======
     protected $username = 'username';
     
->>>>>>> newGorilla
 	use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
 	/**
@@ -40,8 +33,6 @@ class AuthController extends Controller
 	{
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
-<<<<<<< HEAD
-=======
     
     
     
@@ -79,7 +70,6 @@ class AuthController extends Controller
 }
     
     
->>>>>>> newGorilla
 	/**
 	 * Get a validator for an incoming registration request.
 	 *

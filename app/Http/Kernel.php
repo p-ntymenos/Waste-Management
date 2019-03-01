@@ -29,10 +29,7 @@ class Kernel extends HttpKernel {
 		'guest' 		=> 'App\Http\Middleware\RedirectIfAuthenticated',
 		'editable'		=> 'App\Http\Middleware\UserEditHimselfMiddleware',
 		'admin'			=> 'App\Http\Middleware\IsAdminMiddleware',
-<<<<<<< HEAD
-=======
         'deleteMyself'	=> 'App\Http\Middleware\userDeleteHimself',
->>>>>>> newGorilla
 	];
 
 }

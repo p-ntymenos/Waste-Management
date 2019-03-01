@@ -2,26 +2,6 @@
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
-
-class Mitrwo extends Model {
-
-    //
-
-    protected $table = 'zcl_mhtrooneww';
-
-    //get all perifereies
-    public function getPerifereies(){
-
-        $query = "SELECT Kpefdescr as perifereia , sum(qty) as qty FROM zcl_mhtrooneww where Kpefdescr <> '' group by perifereia order by Kpefdescr asc";
-
-        $results = DB::select($query);
-
-        return $results;
-    }
-
-    public function getMainChart($year,$category,$xAxis,$district = null){
-=======
 use Auth;
 use App\Role;
 use App\User;
@@ -149,7 +129,6 @@ class Mitrwo extends Model {
     }
 
     public function getMainChart($year,$category,$xAxis){
->>>>>>> newGorilla
 
 
         $categories = ['ALL','Κατηγορία 1','Κατηγορία 2','Κατηγορία 3','Λάσπη','Φυτικά'];
@@ -158,26 +137,6 @@ class Mitrwo extends Model {
         $query = "select month(ftrdate) as month, year(ftrdate) as year, sum(qty) as posotita, descr as katigoria from zcl_mhtrooneww where ";
 
         if($chooseCategory<>'ALL')$query .="descr='".$chooseCategory."' and";
-<<<<<<< HEAD
-        
-        if($year == 'last-12'){
-            $query .=" ftrdate >= DATE_SUB(now(), INTERVAL 12 MONTH) ";
-        }else if($year){
-            $query .=" year(ftrdate) = ".$year;
-        }
-
-        if($district) $query .=" and  (Kpefdescr = '".$district."' or Ypefdescr = '".$district."') ";
-        
-        $query .=" group by month(ftrdate) ";
-        
-        if($year == 'last-12'){
-            $query .="order by ftrdate asc";
-        }
-        $jsonOutput = Array();
-        $results = DB::select($query);
-
-        
-=======
         $query .= $this->filterDownUser($year);
 
         $query .=" group by month(ftrdate) ";
@@ -189,7 +148,6 @@ class Mitrwo extends Model {
         $results = DB::select($query);
 
 
->>>>>>> newGorilla
         foreach($results as $obj ) {
             if(!empty($xAxis)){
                 array_push($jsonOutput,date('M', mktime(0, 0, 0, $obj->month, 10))."<br>".$obj->year);
@@ -201,26 +159,13 @@ class Mitrwo extends Model {
         return $jsonOutput;
     }
 
-<<<<<<< HEAD
-    //get all sum of qty given in year
-    public function getTotalQty($year){
-=======
     public function getTotalQty($year,$customerId = 0){
->>>>>>> newGorilla
 
         if($year == '')$year = '2014';
 
         $query = "select sum(qty) as posotita, descr as katigoria from zcl_mhtrooneww where ";
-<<<<<<< HEAD
-        if($year == 'last-12'){
-            $query .= " ftrdate >= DATE_SUB(now(), INTERVAL 12 MONTH) "; 
-        }else{    
-            $query .=" year(ftrdate) = ".$year;
-        }
-=======
 
         $query .= $this->filterDownUser($year);
->>>>>>> newGorilla
 
         $results = DB::select($query);
 
@@ -234,23 +179,6 @@ class Mitrwo extends Model {
 
     }
 
-<<<<<<< HEAD
-    // get total producers per year
-    public function getTotalProducers($year,$district = null){
-
-        $query = "select count(distinct(pelatis)) as paragogoi  from zcl_mhtrooneww where ";
-
-        if($year == 'last-12'){
-            $query .= " ftrdate >= DATE_SUB(now(), INTERVAL 12 MONTH) "; 
-        }else{    $query .=" year(ftrdate) = ".$year;}
-        
-        if($district) $query .=" and  (Kpefdescr = '".$district."' or Ypefdescr = '".$district."') ";
-        
-        $results = DB::select($query);
-
-        $jsonOutput = Array();
-
-=======
     public function getCategoriesSum($year,$district = null){
 
         $query = "SELECT sum(qty) as sum,descr FROM `zcl_mhtrooneww` where ";
@@ -289,79 +217,10 @@ class Mitrwo extends Model {
         $query .= $this->filterDownUser($year);
         $results = DB::select($query);
         $jsonOutput = Array();
->>>>>>> newGorilla
         /* fetch object array */
         foreach($results as $obj){
             $jsonOutput = floatval($obj->paragogoi);
         }
-<<<<<<< HEAD
-
-        $retVal = number_format($jsonOutput,0,",",".");
-
-        return $retVal;
-    }
-
-    //get quantity summary per year
-    public function getCategoriesSum($year,$district = null){
-
-        $query = "SELECT sum(qty) as sum,descr FROM `zcl_mhtrooneww` where ";
-        if($year == 'last-12'){
-            $query .=" ftrdate >= DATE_SUB(now(), INTERVAL 12 MONTH) ";
-        }else if($year){
-            $query .=" year(ftrdate) = ".$year;
-        }
-        if($district) $query .=" and  (Kpefdescr = '".$district."' or Ypefdescr = '".$district."') ";
-        $query .=" group by descr order by descr asc";
-        
-        $results = DB::select($query);
-
-        return  $results;
-
-    }
-    
-    //
-    public function getMainChartData($year,$district = null){
-
-        $categories = ['ALL','category1','category2','category3','laspi','fytika'];
-        $jsonOutput = array();
-        $jsonOutput['xAxis'] = $this->getMainChart($year,0,1);
-        foreach($categories as $key => $value){
-            $jsonOutput[$value] = Mitrwo::getMainChart($year,$key,0,$district);
-        }
-
-        $jsonOutput['totalQTY']         = Mitrwo::getTotalQty($year,$district);
-        $jsonOutput['totalProducers']   = Mitrwo::getTotalProducers($year,$district); 
-        $jsonOutput['categoriesSUM']    = Mitrwo::getCategoriesSum($year,$district);
-        $jsonOutput['temperature']      = Mitrwo::getTemperature($year,$district);
-        $jsonOutput['material']         = Mitrwo::getMaterial($year,$district);
-        $jsonOutput['confiscation']     = Mitrwo::getConfiscation($year,$district);
-        $jsonOutput['packaging']        = Mitrwo::getPackaging($year,$district);
-        
-        
-        return $jsonOutput;
-    }
-    
-    //Temperature informations
-    public function getTemperature($year,$district=null){
-
-        $query = "SELECT sum(qty) as sum ,thermokrasia as type FROM `zcl_mhtrooneww` where thermokrasia <> '' ";
-
-        if($year == '12-last'){
-
-            $query .= ' and DATE_SUB(now(), INTERVAL 12 MONTH)';
-
-        }else{
-
-            $query .=" and year(ftrdate) = ".$year;
-
-        }
-        
-        if($district) $query .=" and  (Kpefdescr = '".$district."' or Ypefdescr = '".$district."') ";
-
-        $query .= ' group by thermokrasia';
-        $results = DB::select($query);
-
-=======
         $retVal = number_format($jsonOutput,0,",",".");
         return $retVal;
     }
@@ -421,85 +280,12 @@ class Mitrwo extends Model {
         //            $row->sum = $this->formatNumber($row->sum);
         //            array_push($resArray,$row);
         //        }
->>>>>>> newGorilla
         return $results;
 
     }
 
     public function getMaterial($year,$district=null){
 
-<<<<<<< HEAD
-        $query = "SELECT sum(qty) as sum ,eidos_ylikon as material FROM `zcl_mhtrooneww` where eidos_ylikon <> '' ";
-
-        if($year == '12-last'){
-
-            $query .= ' and DATE_SUB(now(), INTERVAL 12 MONTH)';
-
-        }else{
-
-            $query .=" and year(ftrdate) = ".$year;
-
-        }
-        
-        if($district) $query .=" and  (Kpefdescr = '".$district."' or Ypefdescr = '".$district."') ";
-
-        $query .= ' group by eidos_ylikon';
-        $results = DB::select($query);
-
-        return $results;
-
-    }
-    
-    //synolo katashesis
-    public function getConfiscation($year,$district=null){
-
-        $query = "SELECT sum(qty) as sum ,katasxesi as type FROM `zcl_mhtrooneww` where katasxesi <> '' ";
-
-        if($year == '12-last'){
-
-            $query .= ' and DATE_SUB(now(), INTERVAL 12 MONTH)';
-
-        }else{
-
-            $query .=" and year(ftrdate) = ".$year;
-
-        }
-        
-        if($district) $query .=" and  (Kpefdescr = '".$district."' or Ypefdescr = '".$district."') ";
-
-        $query .= ' group by katasxesi';
-        $results = DB::select($query);
-
-        return $results;
-
-    }
-    
-    //Packaging informations
-    public function getPackaging($year,$district=null){
-
-        $query = "SELECT (sum(qty)/1000) as sum ,syskeysia as type FROM `zcl_mhtrooneww` where syskeysia <> '' ";
-
-        if($year == '12-last'){
-
-            $query .= ' and DATE_SUB(now(), INTERVAL 12 MONTH)';
-
-        }else{
-
-            $query .=" and year(ftrdate) = ".$year;
-
-        }
-        
-        if($district) $query .=" and  (Kpefdescr = '".$district."' or Ypefdescr = '".$district."') ";
-
-        $query .= ' group by syskeysia';
-        $results = DB::select($query);
-
-        return $results;
-
-    }
-    
-    
-=======
         $query = "SELECT sum(qty) as y ,eidos_ylikon as name FROM `zcl_mhtrooneww` where eidos_ylikon <> '' ";
         $query .= " and ".$this->filterDownUser($year);        
         $query .= ' group by eidos_ylikon order by y desc';
@@ -733,7 +519,6 @@ class Mitrwo extends Model {
         return $jsonOutput;
     }
 
->>>>>>> newGorilla
 
 }
 
