@@ -1,0 +1,45 @@
+/* παντελής Αλλαγές*/
+
+.angularTabs .filters {
+    border: 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.angularTabs .tab-content{padding:0px;}
+.angularTabs .table-responsive{padding:10px 8px;}
+
+
+.angularTabs .tab-pagination.pull-left{margin-left:8px;}
+.angularTabs .buttons.pull-right{margin-right:8px;padding-bottom:10px;}
+
+
+  
+
+  
+i.icon.gicon-arrow-left:before {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: -3px;
+    position: absolute;
+    content: "\65";
+    left: -25px;
+}
+
+i.icon.gicon-arrow-right:before {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: -3px;
+    position: absolute;
+    content: "\65";
+}
+
+.table-pagination a {
+    color: #333;
+    position: relative;
+}

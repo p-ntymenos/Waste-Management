@@ -1,0 +1,4 @@
+Referrer URL : http://demo.jimframes.com/index.php?route=payment/GOP_PiraeusBankGr/redirect
+Success URL : http://demo.jimframes.com/index.php?route=payment/GOP_PiraeusBankGr/callback
+Failure URL : http://demo.jimframes.com/index.php?route=payment/GOP_PiraeusBankGr/callback
+Backlink URL: http://demo.jimframes.com/index.php

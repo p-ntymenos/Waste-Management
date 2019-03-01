@@ -1,0 +1,9 @@
+/vendor
+composer.phar
+composer.lock
+.DS_Store
+Thumbs.db
+.env
+/.idea
+/_db_dump
+/_cronsDataFactors

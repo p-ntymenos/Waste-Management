@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "gorilla-app";
+  src:url("fonts/gorilla-app.eot");
+  src:url("fonts/gorilla-app.eot?#iefix") format("embedded-opentype"),
+    url("fonts/gorilla-app.woff") format("woff"),
+    url("fonts/gorilla-app.ttf") format("truetype"),
+    url("fonts/gorilla-app.svg#gorilla-app") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "gorilla-app" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="gicon-"]:before,
+[class*=" gicon-"]:before {
+  font-family: "gorilla-app" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gicon-alert-msgs-info:before {
+  content: "\62";
+}
+.gicon-alert-msgs-success:before {
+  content: "\63";
+}
+.gicon-alert-msgs-warning:before {
+  content: "\64";
+}
+.gicon-earth:before {
+  content: "\77";
+}
+.gicon-d-warning:before {
+  content: "\78";
+}
+.gicon-d-trash-can:before {
+  content: "\79";
+}
+.gicon-d-thermometer:before {
+  content: "\7a";
+}
+.gicon-graph-2:before {
+  content: "\41";
+}
+.gicon-graph-3:before {
+  content: "\42";
+}
+.gicon-l-gavel:before {
+  content: "\43";
+}
+.gicon-l-scale:before {
+  content: "\44";
+}
+.gicon-my-profile-settings:before {
+  content: "\57";
+}
+.gicon-my-profile-edit:before {
+  content: "\58";
+}
+.gicon-menu-routes:before {
+  content: "\59";
+}
+.gicon-menu-regions:before {
+  content: "\5a";
+}
+.gicon-producers-linegraph:before {
+  content: "\30";
+}
+.gicon-producers-store-network:before {
+  content: "\31";
+}
+.gicon-producers-stores:before {
+  content: "\32";
+}
+.gicon-r-truck:before {
+  content: "\33";
+}
+.gicon-sm-bell:before {
+  content: "\24";
+}
+.gicon-sm-chat:before {
+  content: "\25";
+}
+.gicon-sm-clock:before {
+  content: "\26";
+}
+.gicon-sm-info:before {
+  content: "\27";
+}
+.gicon-sort-by:before {
+  content: "\28";
+}
+.gicon-truck:before {
+  content: "\29";
+}
+.gicon-arrow-down:before {
+  content: "\65";
+}
+.gicon-close:before {
+  content: "\66";
+}
+.gicon-d-box:before {
+  content: "\67";
+}
+.gicon-d-folder:before {
+  content: "\68";
+}
+.gicon-d-gears:before {
+  content: "\69";
+}
+.gicon-d-industry:before {
+  content: "\6a";
+}
+.gicon-d-infographic-factory:before {
+  content: "\6b";
+}
+.gicon-d-infographic-warehouse:before {
+  content: "\6c";
+}
+.gicon-d-tag:before {
+  content: "\6d";
+}
+.gicon-export:before {
+  content: "\6e";
+}
+.gicon-faq-coins:before {
+  content: "\6f";
+}
+.gicon-faq-form:before {
+  content: "\70";
+}
+.gicon-faq-home:before {
+  content: "\71";
+}
+.gicon-faq-icon:before {
+  content: "\72";
+}
+.gicon-faq-links:before {
+  content: "\73";
+}
+.gicon-faq-qas:before {
+  content: "\74";
+}
+.gicon-faq-settings:before {
+  content: "\75";
+}
+.gicon-graph-1:before {
+  content: "\76";
+}
+.gicon-legislation:before {
+  content: "\45";
+}
+.gicon-live-chat-minimize:before {
+  content: "\47";
+}
+.gicon-magnifying-glass:before {
+  content: "\48";
+}
+.gicon-menu-abp-reports:before {
+  content: "\49";
+}
+.gicon-menu-dashboard:before {
+  content: "\4a";
+}
+.gicon-menu-legislation:before {
+  content: "\4b";
+}
+.gicon-menu-plants:before {
+  content: "\4c";
+}
+.gicon-menu-producers:before {
+  content: "\4d";
+}
+.gicon-notification:before {
+  content: "\4e";
+}
+.gicon-pdf-file:before {
+  content: "\4f";
+}
+.gicon-plant:before {
+  content: "\50";
+}
+.gicon-plants-bar-chart:before {
+  content: "\51";
+}
+.gicon-plants-check-mark:before {
+  content: "\52";
+}
+.gicon-plants-mex:before {
+  content: "\53";
+}
+.gicon-plants-processing-facility:before {
+  content: "\54";
+}
+.gicon-print:before {
+  content: "\55";
+}
+.gicon-producers:before {
+  content: "\56";
+}
+.gicon-regions-bar-chart:before {
+  content: "\34";
+}
+.gicon-reports:before {
+  content: "\35";
+}
+.gicon-routes-bar-chart-1:before {
+  content: "\36";
+}
+.gicon-routes-bar-chart-2:before {
+  content: "\37";
+}
+.gicon-routes-infographic-arrow:before {
+  content: "\38";
+}
+.gicon-routes-infographic-factory:before {
+  content: "\21";
+}
+.gicon-routes-infographic-large-arrow:before {
+  content: "\22";
+}
+.gicon-routes-infographic-warehouse:before {
+  content: "\23";
+}
+.gicon-routes-infographic-building:before {
+  content: "\39";
+}
+.gicon-live-chat-menu:before {
+  content: "\46";
+}
+.gicon-abp-reports-filters:before {
+  content: "\61";
+}
+.gicon-sorting-mobile:before {
+  content: "\2a";
+}
+.gicon-filtering-funnel-mobile:before {
+  content: "\2c";
+}
+.gicon-arrow-down-manage-user:before {
+  content: "\2d";
+}
+.gicon-arrow-mobile:before {
+  content: "\2e";
+}
+.gicon-checkmark-mobile:before {
+  content: "\2f";
+}
+.gicon-camera-2:before {
+  content: "\3a";
+}
+.gicon-camera-1:before {
+  content: "\3b";
+}
+.gicon-edit-profile:before {
+  content: "\3c";
+}
+.gicon-user-management-88:before {
+  content: "\5d";
+}
+.gicon-polaroid-83:before {
+  content: "\5e";
+}
+.gicon-bell-86:before {
+  content: "\2b";
+}
+.gicon-bell-91:before {
+  content: "\3e";
+}
+.gicon-bell-92:before {
+  content: "\3f";
+}
+.gicon-envelope-90:before {
+  content: "\40";
+}
+.gicon-envelope-93:before {
+  content: "\5b";
+}
+.gicon-tools-94:before {
+  content: "\5f";
+}
+.gicon-user-management-89:before {
+  content: "\60";
+}
+.gicon-error-95:before {
+  content: "\3d";
+}

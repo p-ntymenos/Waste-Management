@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "H:/wamp2.5/www/gorillaApp/gulpfile.js",
+        "H:/wamp2.5/www/gorillaApp/_vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/js/respond.min.js",
+        "H:/wamp2.5/www/gorillaApp/public/js/angController.js"
+    ]
+}
